@@ -39,9 +39,9 @@ const apiUrl = "https://script.google.com/macros/s/AKfycbzSOw64P3s5WTW6aWGp8BYCx
          h3.textContent = "⚠️ Nepodařilo se načíst aktuální program mší pro dnešní den. Kontaktujte administrátora webových stránek Vratislavice Nad Nisou: " + err.message;
         }
     } else if ("massName" in obj && Array.isArray(obj.massName)) {
-         const date = obj.date
+        const date = obj.date
         if (obj.massName.length === 1 && obj.massName[0].trim() === "") {
-            h3.textContent = "Liturgické texty níže jsou aktuální pro dnešní bohoslužbu";
+            h3.textContent = "Liturgické texty níže jsou aktuální pro dnešní bohoslužbu " + date;
             h3.style.color = "green";
             textyDiv.style.opacity = "1.0"; 
         } else {
