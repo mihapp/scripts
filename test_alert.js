@@ -10,7 +10,7 @@ const apiUrl = "https://script.google.com/macros/s/AKfycbyVQaK4JsR_n4b-mwwllrkR5
     let dots = 0;
   const intervalId = setInterval(() => {
     dots = (dots + 1) % 4; // 0,1,2,3,0,1,2,3...
-    h3.textContent = "Načítám data" + ".".repeat(dots);
+    h3.textContent = "Aktualizuji data" + ".".repeat(dots);
   }, 300); // každých 300 ms
     
     textyDiv.parentNode.insertBefore(h3, textyDiv);
@@ -40,9 +40,10 @@ const apiUrl = "https://script.google.com/macros/s/AKfycbyVQaK4JsR_n4b-mwwllrkR5
          h3.textContent = "Žádná změna pro tento den";
          h3.style.color = "green";
          textyDiv.style.opacity = "1.0"; 
-    } else {
-         h3.style.color = "orange";
-         h3.textContent = "⚠️ Nepodařilo se načíst aktuální program pro dnešní den. Kontaktujte administrátora webových stránek Vratislavice Nad Nisou: " + text;
+    } else if ("massName" in obj) {
+         h3.textContent = "Pozor, v tento den slavíme: " + obj.massName;
+         h3.style.color = "red";
+         textyDiv.style.opacity = "1.0"; 
     }
     })
     .catch(err => {
