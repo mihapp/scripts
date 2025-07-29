@@ -1,1 +1,2 @@
-alert("Ahoj ze souboru script.js!");
+console.log("Zkouska konzole 2");
+//alert("Ahoj ze souboru script.js!");
