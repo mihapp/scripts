@@ -41,17 +41,17 @@ const apiUrl = "https://script.google.com/macros/s/AKfycbzSOw64P3s5WTW6aWGp8BYCx
     } else if ("massName" in obj && Array.isArray(obj.massName)) {
          const date = obj.date
         if (obj.massName.length === 1 && obj.massName[0].trim() === "") {
-            h3.textContent = "Žádná změna pro tento den - liturgické texty níže jsou aktuální";
+            h3.textContent = "Liturgické texty níže jsou aktuální pro dnešní bohoslužbu";
             h3.style.color = "green";
             textyDiv.style.opacity = "1.0"; 
         } else {
          const result = obj.massName.map(name => `• ${name}`).join("<br>");
-         h3.innerHTML = "Pozor, v tento den " + date + " slavíme:<br>" + result + "<br> Níže uvedené (automaticky vygenerované) liturgické texty tak nemusí být použity!!";
+         h3.innerHTML = "Pozor, v tento den " + date + " ve Vratislavicích slavíme:<br>" + result + "<br> Níže uvedené (automaticky vygenerované) liturgické texty tak nemusí být použity!!";
          h3.style.color = "red";
          textyDiv.style.opacity = "0.7"; 
         }
     } else if ("massName" in obj && obj.massName.trim() === "") {
-         h3.textContent = "Žádná změna pro tento den";
+         h3.textContent = "Liturgické texty níže jsou aktuální pro dnešní bohoslužbu";
          h3.style.color = "green";
          textyDiv.style.opacity = "1.0"; 
     } else if ("massName" in obj) {
