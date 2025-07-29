@@ -36,7 +36,7 @@ const apiUrl = "https://script.google.com/macros/s/AKfycbyVQaK4JsR_n4b-mwwllrkR5
          h3.textContent = "Pozor, v tento den slavíme: " + result;
          h3.style.color = "red";
          textyDiv.style.opacity = "1.0"; 
-    } else if "massName" in data && data.massName.trim() === "" {
+    } else if ("massName" in data && data.massName.trim() === "") {
          h3.textContent = "Žádná změna pro tento den;
          h3.style.color = "green";
          textyDiv.style.opacity = "1.0"; 
