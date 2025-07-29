@@ -1,2 +1,21 @@
-console.log("Zkouska konzole 2");
-//alert("Ahoj ze souboru script.js!");
+const url = "https://script.google.com/macros/s/TVUJ_KOD/exec?message=Ahoj%20světe";
+
+  fetch(url)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("HTTP chyba: " + response.status);
+      }
+      return response.text();
+    })
+    .then(text => {
+      const h3 = document.createElement("h3");
+      h3.textContent = "Odpověď: " + text;
+      document.body.appendChild(h3);
+    })
+    .catch(err => {
+      const h3 = document.createElement("h3");
+      h3.style.color = "red";
+      h3.textContent = "⚠️ Chyba při načítání: " + err.message;
+      document.body.appendChild(h3);
+      console.error("Detail chyby:", err);
+    });
