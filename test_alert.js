@@ -51,7 +51,8 @@ const apiUrl = "https://script.google.com/macros/s/AKfycbzSOw64P3s5WTW6aWGp8BYCx
          textyDiv.style.opacity = "0.7"; 
         }
     } else if ("massName" in obj && obj.massName.trim() === "") {
-         h3.textContent = "Liturgické texty níže jsou aktuální pro dnešní bohoslužbu";
+         const date = obj.date
+         h3.textContent = "Liturgické texty níže jsou aktuální pro dnešní bohoslužbu " + date;
          h3.style.color = "green";
          textyDiv.style.opacity = "1.0"; 
     } else if ("massName" in obj) {
