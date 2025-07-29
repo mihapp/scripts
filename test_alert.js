@@ -1,6 +1,6 @@
 var path = window.location.pathname;
 if (path === '/liturgicke_texty_dnes.php') {
-const apiUrl = "https://script.google.com/macros/s/AKfycbyVQaK4JsR_n4b-mwwllrkR5gOhedHnhasK4YZrxe7Ul4M7FhWQBUrhZo3iFZzuwYiX/exec";
+const apiUrl = "https://script.google.com/macros/s/AKfycbx4nzuc5Ip_AIVcYFYJZUPSOgfMXTRzKCKE9VNU6AAru7nQc4Px7BnD-tKMLvLex5MS/exec";
     const textyDiv = document.getElementById("textyd");
 
     const h3 = document.createElement("h3");
