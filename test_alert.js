@@ -32,7 +32,7 @@ const apiUrl = "https://script.google.com/macros/s/AKfycbzNk-1raGf7QjjP6HulLhVX4
         if (obj.error == "404-DatumNenalezeno") {
             const date = obj.date
             h3.style.color = "green";
-            h3.textContent = "Pro datum " + date " nebyl nalezen žádný záznam o mši ve Vratislavicích nad Nisou.".
+            h3.textContent = "Pro datum " + date + " nebyl nalezen žádný záznam o mši ve Vratislavicích nad Nisou.";
         } else {
          const err = obj.error;
          h3.style.color = "orange";
@@ -41,7 +41,7 @@ const apiUrl = "https://script.google.com/macros/s/AKfycbzNk-1raGf7QjjP6HulLhVX4
     } else if ("massName" in obj && Array.isArray(obj.massName)) {
          console.error("003");
         const result = obj.massName.join('\n');
-         h3.textContent = "Pozor, v tento den slavíme: " + result " !!";
+         h3.textContent = "Pozor, v tento den slavíme: " + result + " !!";
          h3.style.color = "red";
          textyDiv.style.opacity = "1.0"; 
     } else if ("massName" in obj && obj.massName.trim() === "") {
