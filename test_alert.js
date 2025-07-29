@@ -1,0 +1,1 @@
+alert("Ahoj ze souboru script.js!");
