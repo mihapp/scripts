@@ -42,7 +42,7 @@ const apiUrl = "https://script.google.com/macros/s/AKfycbzNk-1raGf7QjjP6HulLhVX4
          console.error("003");
          const date = obj.date
         const result = obj.massName.map(name => `• ${name}`).join('<br>');
-         h3.innerHTML = "Pozor, v tento den " + date + " slavíme: " + result + " !'<br>' Níže uvedené liturgické texty tak pravděpodobně nebudou použity!!";
+         h3.innerHTML = "Pozor, v tento den " + date + " slavíme:'<br>'" + result + " !'<br>' Níže uvedené liturgické texty tak pravděpodobně nebudou použity!!";
          h3.style.color = "red";
          textyDiv.style.opacity = "0.7"; 
     } else if ("massName" in obj && obj.massName.trim() === "") {
