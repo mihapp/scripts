@@ -1,6 +1,6 @@
 var path = window.location.pathname;
 if (path === '/liturgicke_texty_dnes.php') {
-const apiUrl = "https://script.google.com/macros/s/AKfycbzNk-1raGf7QjjP6HulLhVX4DVjLk3SsEUN1Wn99LTGdWMT-zecCNFl7B3F4iigb2zQ/exec";
+const apiUrl = "https://script.google.com/macros/s/AKfycbzg9kfiD8x3kOMNIZDnRpwjJvvHU6lBCe9iNgaFwOqWpdD87NmRZDYSJ9wpe51XKq4/exec";
     const textyDiv = document.getElementById("textyd");
 
     const h3 = document.createElement("h3");
@@ -41,8 +41,8 @@ const apiUrl = "https://script.google.com/macros/s/AKfycbzNk-1raGf7QjjP6HulLhVX4
     } else if ("massName" in obj && Array.isArray(obj.massName)) {
          console.error("003");
          const date = obj.date
-        const result = obj.massName.map(name => `• ${name}`).join('<br>');
-         h3.innerHTML = "Pozor, v tento den " + date + " slavíme:'<br>'" + result + " !'<br>' Níže uvedené liturgické texty tak pravděpodobně nebudou použity!!";
+        const result = obj.massName.map(name => `• ${name}`).join("<br>");
+         h3.innerHTML = "Pozor, v tento den " + date + " slavíme:<br>" + result + " !<br> Níže uvedené liturgické texty tak pravděpodobně nebudou použity!!";
          h3.style.color = "red";
          textyDiv.style.opacity = "0.7"; 
     } else if ("massName" in obj && obj.massName.trim() === "") {
