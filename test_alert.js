@@ -1,6 +1,6 @@
-const url = "https://script.google.com/macros/s/TVUJ_KOD/exec?message=Ahoj%20světe";
+const apiUrl = "https://script.google.com/macros/s/TVUJ_KOD/exec?message=Ahoj%20světe";
 
-  fetch(url)
+  fetch(apiUrl)
     .then(response => {
       if (!response.ok) {
         throw new Error("HTTP chyba: " + response.status);
