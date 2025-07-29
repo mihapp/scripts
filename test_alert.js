@@ -27,16 +27,16 @@ const apiUrl = "https://script.google.com/macros/s/AKfycbyVQaK4JsR_n4b-mwwllrkR5
       clearInterval(intervalId);
       const obj = JSON.parse(text);
 
-    if ("error" in data) {
+    if ("error" in obj) {
          const err = obj.error;
          h3.style.color = "orange";
          h3.textContent = "⚠️ Nepodařilo se načíst aktuální program pro dnešní den. Kontaktujte administrátora webových stránek Vratislavice Nad Nisou: " + err.message;
-    } else if ("massName" in data && Array.isArray(data.massName)) {
+    } else if ("massName" in obj && Array.isArray(obj.massName)) {
         const result = obj.massName.join('\n');
          h3.textContent = "Pozor, v tento den slavíme: " + result;
          h3.style.color = "red";
          textyDiv.style.opacity = "1.0"; 
-    } else if ("massName" in data && data.massName.trim() === "") {
+    } else if ("massName" in obj && obj.massName.trim() === "") {
          h3.textContent = "Žádná změna pro tento den";
          h3.style.color = "green";
          textyDiv.style.opacity = "1.0"; 
