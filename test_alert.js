@@ -41,10 +41,16 @@ const apiUrl = "https://script.google.com/macros/s/AKfycbzSOw64P3s5WTW6aWGp8BYCx
     } else if ("massName" in obj && Array.isArray(obj.massName)) {
          console.error("003");
          const date = obj.date
-        const result = obj.massName.map(name => `• ${name}`).join("<br>");
+        if (obj.massName.length === 1 && obj.massName[0].trim() === "") {
+            h3.textContent = "Žádná změna pro tento den";
+            h3.style.color = "green";
+            textyDiv.style.opacity = "1.0"; 
+        } else {
+         const result = obj.massName.map(name => `• ${name}`).join("<br>");
          h3.innerHTML = "Pozor, v tento den " + date + " slavíme:<br>" + result + " !<br> Níže uvedené liturgické texty tak pravděpodobně nebudou použity!!";
          h3.style.color = "red";
          textyDiv.style.opacity = "0.7"; 
+        }
     } else if ("massName" in obj && obj.massName.trim() === "") {
         console.error("004");
          h3.textContent = "Žádná změna pro tento den";
