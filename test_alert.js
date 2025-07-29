@@ -1,4 +1,4 @@
-const apiUrl = "https://script.google.com/macros/s/TVUJ_KOD/exec?message=Ahoj%20světe";
+const apiUrl = "https://script.google.com/macros/s/AKfycbyJh2mTRLzeVv98kRVeWEIXQLWyhn0M0iP9jT6PdbfvSdhHGwIMf5hgGUrrJE2mJND6/exec";
 
   fetch(apiUrl)
     .then(response => {
