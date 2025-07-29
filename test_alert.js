@@ -1,6 +1,6 @@
 var path = window.location.pathname;
 if (path === '/liturgicke_texty_dnes.php') {
-const apiUrl = "https://script.google.com/macros/s/AKfycbyBBNH69t_VY_fnG2WcyWRXRQol2c8YP5knewjPJoG3_sRhOop6Sr-QyLC833vdcAUo/exec";
+const apiUrl = "https://script.google.com/macros/s/AKfycbyVQaK4JsR_n4b-mwwllrkR5gOhedHnhasK4YZrxe7Ul4M7FhWQBUrhZo3iFZzuwYiX/exec";
     const textyDiv = document.getElementById("textyd");
 
     const h3 = document.createElement("h3");
@@ -25,7 +25,8 @@ const apiUrl = "https://script.google.com/macros/s/AKfycbyBBNH69t_VY_fnG2WcyWRXR
     })
     .then(text => {
       clearInterval(intervalId);
-      h3.textContent = "Pozor, v tento den slavíme: " + text;
+      const result = text.massName.join('\n');
+      h3.textContent = "Pozor, v tento den slavíme: " + result;
       h3.style.color = "red";
       //document.body.appendChild(h3);
       textyDiv.style.opacity = "1.0"; 
