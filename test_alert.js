@@ -36,7 +36,7 @@ const apiUrl = "https://script.google.com/macros/s/AKfycbzSOw64P3s5WTW6aWGp8BYCx
         } else {
          const err = obj.error;
          h3.style.color = "orange";
-         h3.textContent = "⚠️ Nepodařilo se načíst aktuální program mší pro dnešní den. Kontaktujte administrátora webových stránek Vratislavice Nad Nisou: " + err.message;
+         h3.textContent = "⚠️ Nepodařilo se načíst aktuální program mší pro dnešní den. Kontaktujte administrátora webových stránek farnosti Vratislavice nad Nisou: " + err.message;
         }
     } else if ("massName" in obj && Array.isArray(obj.massName)) {
         const date = obj.date
@@ -64,7 +64,7 @@ const apiUrl = "https://script.google.com/macros/s/AKfycbzSOw64P3s5WTW6aWGp8BYCx
     .catch(err => {
       clearInterval(intervalId);
       h3.style.color = "orange";
-      h3.textContent = "⚠️ Nepodařilo se načíst aktuální program pro dnešní den. Kontaktujte administrátora webových stránek Vratislavice Nad Nisou: " + err.message;
+      h3.textContent = "⚠️ Nepodařilo se načíst aktuální program pro dnešní den. Kontaktujte administrátora webových stránek farnosti Vratislavice nad Nisou: " + err.message;
       //document.body.appendChild(h3);
       console.error("Detail chyby:", err);
       textyDiv.style.opacity = "1.0";  
